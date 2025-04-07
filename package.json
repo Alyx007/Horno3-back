@@ -1,0 +1,23 @@
+{
+  "name": "horno3-back",
+  "version": "1.0.0",
+  "description": "backend for an app developed for museum Horno3 in Monterrey",
+  "main": "api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alyx007/Horno3-back.git"
+  },
+  "author": "Aleksandra Stupiec",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alyx007/Horno3-back/issues"
+  },
+  "homepage": "https://github.com/Alyx007/Horno3-back#readme",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.4",
+    "express": "^5.1.0"
+  }
+}
