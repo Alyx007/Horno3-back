@@ -1,4 +1,4 @@
-const ActivityServices = require('../services/activities.js')
+const ActivityServices = require('../services/activitiesServices.js')
 
 module.exports = {
     getAllActvity : async (req, res, next) => {
