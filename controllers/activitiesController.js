@@ -6,7 +6,7 @@ module.exports = {
             const activity  = await ActivityServices.getAllActvity();
             return res.json({activity})
         } catch (err){
-            return res.json({"message": `Erro al obtener las actividades. Err: ${err}`})
+            return res.json({"message": `Erro al obtener todas las actividades. Err: ${err}`})
         }
         
     },
@@ -22,7 +22,7 @@ module.exports = {
             return res.json({activity})
 
         } catch (err){
-            return res.json({"message": `Erro al obtener las actividades. Err: ${err}`})
+            return res.json({"message": `Erro al obtener las actividades by Id. Err: ${err}`})
         }
 
     },
