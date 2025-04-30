@@ -1,16 +1,16 @@
 const ActivityServices = require('../services/activitiesServices.js')
 
 module.exports = {
-    getAllActvity : async (req, res, next) => {
+    getAllActivity : async (req, res, next) => {
         try {
-            const activity  = await ActivityServices.getAllActvity();
+            const activity  = await ActivityServices.getAllActivity();
             return res.json({activity})
         } catch (err){
-            return res.json({"message": `Erro al obtener todas las actividades. Err: ${err}`})
+            return res.json({"message": `Error al obtener todas las actividades. Err: ${err}`})
         }
         
     },
-    getActvity : async (req, res) => {
+    getActivity : async (req, res) => {
         
         const id = req.params.id
         
@@ -18,7 +18,7 @@ module.exports = {
             return res.json({"message": "El Id necesita ser entero"})
         }
         try {
-            const activity = await ActivityServices.getActvity(id);
+            const activity = await ActivityServices.getActivity(id);
             return res.json({activity})
 
         } catch (err){
@@ -26,10 +26,10 @@ module.exports = {
         }
 
     },
-    addActvity : async (req, res) => {
+    addActivity : async (req, res) => {
 
         try {
-            const activity = await ActivityServices.addActvity(req.body);
+            const activity = await ActivityServices.addActivity(req.body);
             res.status(200).json({activity})
 
         } catch (err){
@@ -52,3 +52,5 @@ module.exports = {
 
     }
 }
+
+console.log(ActivityServices);
