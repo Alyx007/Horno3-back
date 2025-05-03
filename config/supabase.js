@@ -3,15 +3,20 @@ const { Pool } = require('pg');
 
 dotenv.config()
 
-const dbUrl = process.env.DATABASE_URL;
-const password = dbUrl.split(':')[2].split('@')[0]; // Extract password
-console.log('Password type:', typeof password); // Must output "string"
+// const dbUrl = process.env.DATABASE_URL;
+// const password = dbUrl.split(':')[2].split('@')[0]; // Extract password
+// console.log('Password type:', typeof password); // Must output "string"
 
 const pool = new Pool({
-    connectionString: dbUrl,
-    //ssl: process.env.DATABASE_URL ? true : false, // Required for Supabase SSL
-    connectionTimeoutMillis: 5000,
-    idleTimeoutMillis: 30000,
+    user: process.env.USER,
+    host: process.env.HOST,
+    database: process.env.DB,
+    password: process.env.PASSWORD,
+    port: process.env.PORT,
+    ssl: {
+        rejectUnauthorized: false
+    },
+    family: 4
 });
 
 const querypromise = (sql) => {
