@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const app = express();
-const pool = require('./config/supabase');
+//const pool = require('./config/supabase');
 dotenv.config();
 
 const port = process.env.PORT || 3000;
@@ -12,7 +12,7 @@ app.use(cors({
   origin: 'http://127.0.0.2:5500'
 }));
 
-const activityRoutes = require('./routes/activityRoutes');
+const activityRoutes = require('./routes/activities');
 app.use('/api/activities', activityRoutes);
 
 
