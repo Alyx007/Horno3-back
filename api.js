@@ -9,22 +9,24 @@ const port = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(cors({
-  origin: 'http://'
+  origin: 'http://127.0.0.2:5500'
 }));
 
-// app.get('/', (req, res) => {
-//   res.send('Backend de Horno3 working! 🎉');
-// })
+const activityRoutes = require('./routes/activityRoutes');
+app.use('/api/activities', activityRoutes);
 
-//Aqui estan todas las rutas
-app.use(require('./routes/routes.js'));
 
-app.use('/activities', require('./routes/activities.js'))
 // app.use('/exceptions', require('./routes/exceptions.js'))
 // app.use('/schedules', require('./routes/schedules.js'))
 // app.use('/news', require('./routes/news.js'))
 // app.use('/experiences', require('./routes/experiences.js'))
 
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ error: 'Something went wrong' });
+});
+
 app.listen(port, () => {
-  console.log(`Running on localhost:${port}`);
+  console.log(`Server running on port ${port}`);
+  console.log(`API available at http://localhost:${port}/api/activities`);
 })
