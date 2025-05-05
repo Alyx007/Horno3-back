@@ -1,8 +1,12 @@
 const dbService = require('../config/supabase.js')
 
 module.exports = {
-    getAllExperiences : () => {
-        sql = 'SELECT * FROM experience'
-        return dbService.querypromise(sql)
+    getAllExperiences : async () => {
+        try {
+            sql = 'SELECT * FROM experience';
+            return dbService.querypromise(sql);
+        } catch (err) {
+            throw err;
+        }
     }
-}
+};
