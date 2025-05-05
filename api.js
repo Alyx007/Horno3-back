@@ -14,12 +14,13 @@ app.use(cors({
 
 const activityRoutes = require('./routes/activities');
 app.use('/api/activities', activityRoutes);
-
+const experiencesRoutes = require('./routes/experiences.js');
+app.use('/api/experiences', experiencesRoutes);
 
 // app.use('/exceptions', require('./routes/exceptions.js'))
 // app.use('/schedules', require('./routes/schedules.js'))
 // app.use('/news', require('./routes/news.js'))
-// app.use('/experiences', require('./routes/experiences.js'))
+
 
 app.use((err, req, res, next) => {
   console.error(err.stack);
