@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
-const ExperienceControllers = require('../controllers/experiencesController')
+const ExceptionControllers = require('../controllers/exceptionsController')
 
-router.get('/', ExperienceControllers.getAllExperience)
+router.get('/', ExceptionControllers.getAllExceptions)
 
 module.exports = router;
