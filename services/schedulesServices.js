@@ -1,7 +1,7 @@
 const dbService = require('../config/supabase.js')
 
 module.exports = {
-    getAllASchedules : () => {
+    getAllSchedules : () => {
         sql = 'SELECT * FROM schedule'
         return dbService.querypromise(sql)
     }
