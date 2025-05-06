@@ -1,10 +1,10 @@
-const ExperienceServices = require('../services/experiencesServices.js')
+const ExperiencesServices = require('../services/experiencesServices.js')
 
 module.exports = {
-    getAllExperience : async (req, res, next) => {
+    getAllExperiences : async (req, res, next) => {
         try {
-            const experience  = await ExperienceServices.getAllExperience();
-            return res.json({experience})
+            const experiences  = await ExperiencesServices.getAllExperiences();
+            return res.json({experiences})
         } catch (err){
             console.error('Error fetching experiences:', err);
             res.status(500).json({ message: 'Error fetching experiences', error: err.message });
@@ -13,4 +13,4 @@ module.exports = {
     }
 }
 
-console.log(ExperienceServices);
+console.log(ExperiencesServices);

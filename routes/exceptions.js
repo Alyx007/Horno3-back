@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const ExceptionControllers = require('../controllersexceptionsController')
+const ExceptionControllers = require('../controllers/exceptionsController')
 
 router.get('/', ExceptionControllers.getAllExceptions)
 

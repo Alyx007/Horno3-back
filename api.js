@@ -19,9 +19,9 @@ app.use('/api/activities', activityRoutes);
 const experiencesRoutes = require('./routes/experiences.js');
 app.use('/api/experiences', experiencesRoutes);
 const exceptionsRoutes = require('./routes/exceptions.js');
-app.use('/exceptions', exceptionsRoutes);
+app.use('/api/exceptions', exceptionsRoutes);
 const schedulesRoutes = require('./routes/schedules.js');
-app.use('/schedules', schedulesRoutes);
+app.use('/api/schedules', schedulesRoutes);
 const newsRoutes = require('./routes/news.js');
 app.use('/api/news', newsRoutes)
 
