@@ -18,10 +18,12 @@ const activityRoutes = require('./routes/activities');
 app.use('/api/activities', activityRoutes);
 const experiencesRoutes = require('./routes/experiences.js');
 app.use('/api/experiences', experiencesRoutes);
-
-// app.use('/exceptions', require('./routes/exceptions.js'))
-// app.use('/schedules', require('./routes/schedules.js'))
-// app.use('/news', require('./routes/news.js'))
+const exceptionsRoutes = require('./routes/exceptions.js');
+app.use('/exceptions', exceptionsRoutes);
+const schedulesRoutes = require('./routes/schedules.js');
+app.use('/schedules', schedulesRoutes);
+const newsRoutes = require('./routes/news.js');
+app.use('/api/news', newsRoutes)
 
 
 app.use((err, req, res, next) => {
