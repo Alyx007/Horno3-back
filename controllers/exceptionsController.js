@@ -3,7 +3,7 @@ const ExceptionsServices = require('../services/exceptionsServices.js')
 module.exports = {
     getAllExceptions : async (req, res, next) => {
         try {
-            const exceptions  = await ExceptionServices.getAllExceptions();
+            const exceptions  = await ExceptionsServices.getAllExceptions();
             return res.json({exceptions})
         } catch (err){
             console.error('Error fetching exceptions:', err);
